@@ -1,0 +1,229 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Clasificación},
+  pdfauthor={Antonio Fernández Hugo},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Clasificación}
+\author{Antonio Fernández Hugo}
+\date{2023-02-06}
+
+\begin{document}
+\maketitle
+
+\hypertarget{clasificaciuxf3n-detallada}{%
+\section{Clasificación detallada}\label{clasificaciuxf3n-detallada}}
+
+\hypertarget{factor-general-drenaje-d}{%
+\subsection{Factor general drenaje (D)}\label{factor-general-drenaje-d}}
+
+\hypertarget{funciuxf3n-para-definir-el-tipo-textural}{%
+\subsubsection{Función para definir el tipo
+textural}\label{funciuxf3n-para-definir-el-tipo-textural}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ tipoText(Arcilla, Limo, Arena):}
+\NormalTok{  Textura }\OperatorTok{=} \StringTok{\textquotesingle{}\textquotesingle{}}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{10}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{14}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{86} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{100}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Arenosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{15}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{30}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{70} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{86}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franco Arenosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{20}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{50}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{50} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{70}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franco Arenosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{7} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{27}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{28} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{50}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{23} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{52}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franca"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{27}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{74} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{88}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{20} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{50}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franco Limosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{12}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{88} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{100}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{20}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Limosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{27} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{40}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{15} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{52}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{20} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{45}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franco Arcillosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{20} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{35}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{28}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{45} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{80}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franco Arenoso Arcillosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{27} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{40}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{40} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{73}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{20}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Franco Limoso Arcillosa"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{35} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{55}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{20}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{45} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{65}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Arcilloso Arenoso"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{40} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{60}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{40} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{60}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{20}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Arcilloso Limoso"}
+  \ControlFlowTok{if}\NormalTok{ Arcilla }\OperatorTok{\textgreater{}} \DecValTok{40} \KeywordTok{and}\NormalTok{ Arcilla }\OperatorTok{\textless{}} \DecValTok{100}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ Limo }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Limo }\OperatorTok{\textless{}} \DecValTok{40}\NormalTok{:}
+      \ControlFlowTok{if}\NormalTok{ Arena }\OperatorTok{\textgreater{}} \DecValTok{0} \KeywordTok{and}\NormalTok{ Arena }\OperatorTok{\textless{}} \DecValTok{45}\NormalTok{:}
+\NormalTok{        Textura }\OperatorTok{=} \StringTok{"Arcillosa"}
+  \ControlFlowTok{return}\NormalTok{ Textura}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{funciuxf3n-para-obtener-la-conductividad-hidruxe1ulica-en-funciuxf3n-del-tipo-textural}{%
+\subsubsection{Función para obtener la conductividad hidráulica en
+función del tipo
+textural}\label{funciuxf3n-para-obtener-la-conductividad-hidruxe1ulica-en-funciuxf3n-del-tipo-textural}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ condHidra(Arcilla, Limo, Arena):}
+\NormalTok{  Textura }\OperatorTok{=}\NormalTok{ tipoText(Arcilla,Limo,Arena)}
+\NormalTok{  K }\OperatorTok{=} \DecValTok{0}
+  \ControlFlowTok{if}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Arenosa"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Franca"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Franco Arcillosa"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Franco Arenoso Arcillosa"}\NormalTok{:}
+\NormalTok{    K }\OperatorTok{=} \DecValTok{1}\OperatorTok{/}\DecValTok{40} \OperatorTok{*}\NormalTok{ Arena }\OperatorTok{+} \DecValTok{1}\OperatorTok{/}\DecValTok{2}
+  \ControlFlowTok{if}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Franco Arenosa"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Arcilloso Arenosa"}\NormalTok{:}
+\NormalTok{    K }\OperatorTok{=} \DecValTok{3}\OperatorTok{/}\DecValTok{82} \OperatorTok{*}\NormalTok{ Arena }\OperatorTok{{-}} \DecValTok{135}\OperatorTok{/}\DecValTok{82} \OperatorTok{+} \DecValTok{1}\OperatorTok{/}\DecValTok{2}
+  \ControlFlowTok{if}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Franco Limosa"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Limosa"}\NormalTok{:}
+\NormalTok{    K }\OperatorTok{=} \FloatTok{0.3}\OperatorTok{/}\DecValTok{50} \OperatorTok{*}\NormalTok{ Arena }\OperatorTok{+} \DecValTok{1}\OperatorTok{/}\DecValTok{5}
+  \ControlFlowTok{if}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Franco Limoso Arcillosa"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Arcilloso Limosa"} \KeywordTok{or}\NormalTok{ Textura }\OperatorTok{==} \StringTok{"Arcillosa"}\NormalTok{:}
+\NormalTok{    K }\OperatorTok{=} \FloatTok{0.18}\OperatorTok{/}\DecValTok{45} \OperatorTok{*}\NormalTok{ Arena }\OperatorTok{+} \DecValTok{1}\OperatorTok{/}\DecValTok{50}
+  \ControlFlowTok{return}\NormalTok{ K}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ejemplo}{%
+\subsubsection{Ejemplo}\label{ejemplo}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Arcilla }\OperatorTok{=} \DecValTok{44}
+\NormalTok{Limo }\OperatorTok{=} \DecValTok{36}
+\NormalTok{Arena }\OperatorTok{=} \DecValTok{20}
+\NormalTok{Textura }\OperatorTok{=}\NormalTok{ tipoText(Arcilla,Limo,Arena)}
+\BuiltInTok{print}\NormalTok{(Textura)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Arcillosa
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{K }\OperatorTok{=}\NormalTok{ condHidra(Arcilla,Limo,Arena)}
+\BuiltInTok{print}\NormalTok{(K)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 0.1
+\end{verbatim}
+
+\end{document}

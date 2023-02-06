@@ -1,0 +1,98 @@
+---
+title: "Clasificación"
+author: "Antonio Fernández Hugo"
+date: "2023-02-06"
+output: pdf_document
+---
+
+# Clasificación detallada 
+
+## Factor general drenaje (D)
+
+### Función para definir el tipo textural
+
+```{python}
+def tipoText(Arcilla, Limo, Arena):
+  Textura = ''
+  if Arcilla > 0 and Arcilla < 10:
+    if Limo > 0 and Limo < 14:
+      if Arena > 86 and Arena < 100:
+        Textura = "Arenosa"
+  if Arcilla > 0 and Arcilla < 15:
+    if Limo > 0 and Limo < 30:
+      if Arena > 70 and Arena < 86:
+        Textura = "Franco Arenosa"
+  if Arcilla > 0 and Arcilla < 20:
+    if Limo > 0 and Limo < 50:
+      if Arena > 50 and Arena < 70:
+        Textura = "Franco Arenosa"
+  if Arcilla > 7 and Arcilla < 27:
+    if Limo > 28 and Limo < 50:
+      if Arena > 23 and Arena < 52:
+        Textura = "Franca"
+  if Arcilla > 0 and Arcilla < 27:
+    if Limo > 74 and Limo < 88:
+      if Arena > 20 and Arena < 50:
+        Textura = "Franco Limosa"
+  if Arcilla > 0 and Arcilla < 12:
+    if Limo > 88 and Limo < 100:
+      if Arena > 0 and Arena < 20:
+        Textura = "Limosa"
+  if Arcilla > 27 and Arcilla < 40:
+    if Limo > 15 and Limo < 52:
+      if Arena > 20 and Arena < 45:
+        Textura = "Franco Arcillosa"
+  if Arcilla > 20 and Arcilla < 35:
+    if Limo > 0 and Limo < 28:
+      if Arena > 45 and Arena < 80:
+        Textura = "Franco Arenoso Arcillosa"
+  if Arcilla > 27 and Arcilla < 40:
+    if Limo > 40 and Limo < 73:
+      if Arena > 0 and Arena < 20:
+        Textura = "Franco Limoso Arcillosa"
+  if Arcilla > 35 and Arcilla < 55:
+    if Limo > 0 and Limo < 20:
+      if Arena > 45 and Arena < 65:
+        Textura = "Arcilloso Arenoso"
+  if Arcilla > 40 and Arcilla < 60:
+    if Limo > 40 and Limo < 60:
+      if Arena > 0 and Arena < 20:
+        Textura = "Arcilloso Limoso"
+  if Arcilla > 40 and Arcilla < 100:
+    if Limo > 0 and Limo < 40:
+      if Arena > 0 and Arena < 45:
+        Textura = "Arcillosa"
+  return Textura
+```
+
+### Función para obtener la conductividad hidráulica en función del tipo textural
+
+```{python}
+def condHidra(Arcilla, Limo, Arena):
+  Textura = tipoText(Arcilla,Limo,Arena)
+  K = 0
+  if Textura == "Arenosa" or Textura == "Franca" or Textura == "Franco Arcillosa" or Textura == "Franco Arenoso Arcillosa":
+    K = 1/40 * Arena + 1/2
+  if Textura == "Franco Arenosa" or Textura == "Arcilloso Arenosa":
+    K = 3/82 * Arena - 135/82 + 1/2
+  if Textura == "Franco Limosa" or Textura == "Limosa":
+    K = 0.3/50 * Arena + 1/5
+  if Textura == "Franco Limoso Arcillosa" or Textura == "Arcilloso Limosa" or Textura == "Arcillosa":
+    K = 0.18/45 * Arena + 1/50
+  return K
+```
+
+
+### Ejemplo
+
+```{python}
+Arcilla = 44
+Limo = 36
+Arena = 20
+Textura = tipoText(Arcilla,Limo,Arena)
+print(Textura)
+K = condHidra(Arcilla,Limo,Arena)
+print(K)
+```
+
+
