@@ -68,7 +68,7 @@ def tipoText(Arcilla, Limo, Arena):
 ### Función para obtener la conductividad hidráulica en función del tipo textural
 
 ```{python}
-def condHidra(Arcilla, Limo, Arena):
+def condHidra(Arcilla,Limo,Arena):
   Textura = tipoText(Arcilla,Limo,Arena)
   K = 0
   if Textura == "Arenosa" or Textura == "Franca" or Textura == "Franco Arcillosa" or Textura == "Franco Arenoso Arcillosa":
@@ -82,6 +82,128 @@ def condHidra(Arcilla, Limo, Arena):
   return K
 ```
 
+### Función para obtener factor D
+
+```{python}
+def drenaje(Pmin,Pmax,CEA,CH,Arcilla,Limo,Arena):
+  # Primer subindice
+  if Pmin > 3.0:
+    pri = 0
+  if Pmin > 2.0 and Pmin < 3.0001:
+    pri = 1
+  if Pmin > 1.5 and Pmin < 2.0001:
+    pri = 2
+  if Pmin > 1.0 and Pmin < 1.5001:
+    pri = 3
+  if Pmin > 0.5 and Pmin < 1.0001:
+    pri = 4
+  if Pmin < 0.5001:
+    pri = 5
+  # Segundo subindice
+  if Pmax > 3.0:
+    seg = 0
+  if Pmax > 2.0 and Pmax < 3.0001:
+    seg = 1
+  if Pmax > 1.5 and Pmax < 2.0001:
+    seg = 2
+  if Pmax > 1.0 and Pmax < 1.5001:
+    seg = 3
+  if Pmax > 0.5 and Pmax < 1.0001:
+    seg = 4
+  if Pmax < 0.5001:
+    seg = 5
+   # Tercer subindice
+  if CEF < 1.0:
+    ter = 0
+  if CEF > 0.9999 and CEF < 2.0:
+    ter = 1
+  if CEF > 1.9999 and CEF < 4.0:
+    ter = 2
+  if CEF > 3.9999 and CEF < 8.0:
+    ter = 3
+  if CEF > 7.9999 and CEF < 12.0:
+    ter = 4
+  if CEF > 11.9999:
+    ter = 5
+  # Cuarto subindice
+  if CH == -1:
+    CH = condHidra(Arcilla,Limo,Arena)
+  if CH > 6.0:
+    cua = 0
+  if CH > 3.0 and CH < 6.0001:
+    cua = 1
+  if CH > 1.0 and CH < 3.0001:
+    cua = 2
+  if CH > 0.5 and CH < 1.0001:
+    cua = 3
+  if CH > 0.10 and CH < 0.5001:
+    cua = 4
+  if CH < 0.1001:
+    cua = 5
+  #return pri
+  return "D%i%i%i%i" % (pri,seg,ter,cua)
+```
+
+### Función para obtener factor R
+
+```{python}
+def calidadAgua(CEA,NaA,CaA,MgA,KA):
+  PSS = (NaA*100)/(NaA+CaA+MgA+KA)
+  # Primer subíndice
+  if CEA > 0.0999 and CEA < 0.75:
+    pri = 0
+  if CEA > 0.7499 and CEA < 1.25:
+    pri = 1
+  if CEA > 1.2499 and CEA < 2.25:
+    pri = 2
+  if CEA > 2.2499 and CEA < 3.5:
+    pri = 3
+  if CEA > 3.4999 and CEA < 5.0:
+    pri = 4
+  if CEA > 4.9999:
+    pri = 5
+  # Segundo subíndice
+  if PSS < 20:
+    seg = 0
+  if PSS > 19.9999 and PSS < 40:
+    seg = 1
+  if PSS > 39.9999 and PSS < 60:
+    seg = 2
+  if PSS > 59.9999 and PSS < 80:
+    seg = 3
+  if PSS > 79.9999:
+    seg = 4
+  return "R%i%i" % (pri,seg)
+```
+
+### Función para obtener el factor O
+
+```{python}
+def origen(problema,solucion):
+  # Primer subíndice
+  if problema == "-----":
+    pri = 0
+  if problema == "Incremento del nivel freatico":
+    pri = 1
+  if problema == "Mala calidad del agua de riego":
+    pri = 2
+  if problema == "Ambas causas":
+    pri = 3
+  # Segundo subíndice
+  if solucion == "Resuelto":
+    seg = 0
+  if solucion == "Casi resuelto":
+    seg = 1
+  if solucion == "Medianamente resuelto":
+    seg = 2
+  if solucion == "No resuelto":
+    seg = 3
+  if solucion == "Irreversible":
+    seg = 4
+  return "O%i%i" % (pri,seg)
+```
+
+
 
 ### Ejemplo
 
@@ -89,10 +211,24 @@ def condHidra(Arcilla, Limo, Arena):
 Arcilla = 44
 Limo = 36
 Arena = 20
+Pmin = 1.1
+Pmax = 2.0
+CEF = 8
+CH = -1
+NaA = 5
+CaA = 2
+MgA = 1
+KA = 0
+CEA = 0.8
+problema = "Incremento del nivel freatico"
+solucion = "Casi resuelto"
 Textura = tipoText(Arcilla,Limo,Arena)
 print(Textura)
 K = condHidra(Arcilla,Limo,Arena)
 print(K)
+print(drenaje(Pmin,Pmax,CEF,CH,Arcilla,Limo,Arena))
+print(calidadAgua(CEA,NaA,CaA,MgA,KA))
+print(origen(problema,solucion))
 ```
 
 
